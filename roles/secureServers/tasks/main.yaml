@@ -1,0 +1,6 @@
+---
+- name: changing permissions on "/root" to 700
+  file: 
+    path: /root
+    mode: '0700'
+    recurse: yes

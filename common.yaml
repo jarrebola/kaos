@@ -1,0 +1,18 @@
+- hosts: laboratorio
+  roles:
+    - secureServers
+    - updateAll
+    - createUsers
+  tasks:
+    - name: incluye install apache
+      include_role:
+        name: installApache
+      tags:
+        - redhat
+      when: "ansible_facts['os_family'] == 'RedHat'"
+    - include_role:
+        name: installApache
+      tags:
+        - debian
+      when: "ansible_facts['os_family'] == 'Debian'"
+

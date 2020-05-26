@@ -1,0 +1,14 @@
+---
+- yum:
+    name:
+      - httpd
+      - memcached
+    state: latest
+  tags:
+  - redhat
+
+- name: install apache2
+  apt: name=apache2 update_cache=yes state=latest
+  tags:
+  - debian
+

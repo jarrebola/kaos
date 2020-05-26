@@ -1,0 +1,4 @@
+---
+   - name: Update to latest
+     yum: name='*' state=latest update_cache=true
+     when: ansible_os_family=='RedHat'

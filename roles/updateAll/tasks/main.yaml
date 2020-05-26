@@ -1,0 +1,4 @@
+---
+
+- name: Actualiza todo
+  include: "do-upgrade-{{ ansible_os_family | lower }}.yaml"
